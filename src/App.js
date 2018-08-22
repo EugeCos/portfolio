@@ -1,16 +1,18 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./App.less";
 import "./css/global.less";
 
 // ----------COMPONENTS----------
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import ViewContainer from "./components/View-Container/View-Container";
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <Navbar />
-      </Fragment>
+      <div className="App">
+        <Sidebar />
+        <ViewContainer />
+      </div>
     );
   }
 }

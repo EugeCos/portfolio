@@ -1,0 +1,27 @@
+.view-container-positioner {
+  position: relative;
+  overflow: hidden;
+  // width: calc(80% - 1px);
+  width: 80%;
+  height: 100vh;
+  // left: calc(20% + 1px);
+  left: 20%;
+  background: #333;
+}
+
+.view-container-body {
+}
+
+.video {
+  // Maintaining aspect ratio
+  height: 100%;
+  width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  min-height: 56.25vw;
+
+  // Centering the video
+  position: absolute;
+  left: 50%; /* % of surrounding element */
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
