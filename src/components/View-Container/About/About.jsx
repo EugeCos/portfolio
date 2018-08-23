@@ -17,12 +17,13 @@ export default class About extends Component {
             <i className="far fa-star" />
             <i className="far fa-star" />
             <i className="far fa-star" />
+            <h2>ABOUT</h2>
           </div>
 
           <h3>
             <span className="first-letter">H</span>
-            ello there! I am happy to see you here, hope the splashing water
-            doesn't distract you much from reading my little story.
+            ello there! I am happy to see you, hope the splashing water doesn't
+            distract you much from reading my little story.
           </h3>
           <br />
           <h3>

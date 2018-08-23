@@ -24,6 +24,13 @@ export default class ViewContainer extends Component {
             muted
             autoPlay="autoplay"
           />
+          <div
+            className={`${
+              window.location.pathname !== "/"
+                ? "dark-video-overlay"
+                : "dark-video-overlay-none"
+            }`}
+          />
         </div>
       </div>
     );

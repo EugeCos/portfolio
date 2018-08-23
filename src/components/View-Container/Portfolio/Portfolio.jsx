@@ -68,7 +68,7 @@ export default class Portfolio extends Component {
                   : project.imageBackground
                 : project.imageBackground
             }
-            alt="image"
+            alt="project"
           />
           <div
             className={`${
@@ -107,6 +107,11 @@ export default class Portfolio extends Component {
       );
     });
 
-    return <div className="portfolio-container">{projectJSX}</div>;
+    return (
+      <div className="portfolio-container">
+        <h3 className="portfolio-header">PROJECTS</h3>
+        {projectJSX}
+      </div>
+    );
   }
 }

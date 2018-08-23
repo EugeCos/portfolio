@@ -69,9 +69,9 @@ export default class Home extends Component {
     setTimeout(
       () =>
         this.setState({ fading: false }, () =>
-          setInterval(this.updateQuote, 5000)
+          setInterval(this.updateQuote, 6000)
         ),
-      5000
+      3500
     );
   }
 
