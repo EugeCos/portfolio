@@ -11,7 +11,7 @@ export default class ViewContainer extends Component {
             src="/video/drop.mp4"
             loop
             muted
-            autoplay="autoplay"
+            autoPlay="autoplay"
           />
         </div>
       </div>

@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "./Sidebar.less";
 
+// ---------COMPONENTS----------
+import Bio from "./Bio/Bio";
+import Menu from "./Menu/Menu";
+
 export default class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar-positioner">
         <div className="sidebar-container">
-          <h3>Sidebar</h3>
+          <Bio />
+          <hr className="hr-styled" />
+          <Menu />
         </div>
       </div>
     );

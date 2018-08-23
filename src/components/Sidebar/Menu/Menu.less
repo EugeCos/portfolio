@@ -1,0 +1,44 @@
+.menu-item {
+  margin: 9px 0;
+  padding-left: 15%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f7f1e3;
+  font-size: 1.35rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #eaeaea;
+    color: initial;
+  }
+
+  &.selected {
+    background-color: #eaeaea;
+    color: initial;
+  }
+}
+
+.social-links-wrapper {
+  margin: 40px 15%;
+}
+
+.social-icon {
+  color: #2c3e50;
+  font-size: 150%;
+  padding: 12px;
+  margin-right: 20px;
+  border: 1px solid #2c3e50;
+  border-radius: 50px;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background: #f7f1e3;
+    color: initial;
+    border: 1px solid #5c7a9c;
+  }
+}
