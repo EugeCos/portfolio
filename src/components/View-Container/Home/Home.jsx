@@ -73,7 +73,6 @@ export default class Home extends Component {
         ),
       5000
     );
-    // setInterval(this.updateQuote, 5000)
   }
 
   render() {

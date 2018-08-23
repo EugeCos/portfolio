@@ -1,0 +1,39 @@
+.about-container {
+  margin: 120px auto;
+  display: inline-block;
+  width: 60%;
+  padding: 35px 45px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: rgba(110, 144, 189, 0.288);
+}
+
+.first-letter {
+  font-size: 35px;
+  line-height: 30px;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 21px;
+
+  .far {
+    font-size: 20px;
+    padding: 0 30px;
+    color: #ffeaa7;
+    text-shadow: 0 0 35px #000000;
+  }
+}
+
+// Starting state of entry animation
+.fade-effect-appear {
+  opacity: 0.01;
+}
+
+.fade-effect-appear.fade-effect-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
