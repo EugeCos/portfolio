@@ -12,34 +12,32 @@ export default class ViewContainer extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [
-        {
+      projects: {
+        velvet: {
           name: "Velvet Crypto",
-          description: "Cryptocurrency exchange app",
-          imageHover: "/img/velvet.jpg",
-          imageBackground: "/img/velvet_bw.jpg",
+          shortDescription: "Cryptocurrency exchange app",
+          longDescription:
+            "A serverless web-app that allows users to look up cryptocurrencies from a database of 2500+ options and perform basic virtual trade manipulations (buy and sell coins)",
+          imageHover: "/img/velvet/velvet.jpg",
+          imageBackground: "/img/velvet/velvet_bw.jpg",
+          imageDesktop: "/img/velvet/velvet_desktop.png",
           index: 1
         },
-        {
+        fairmont: {
           name: "Fairmont Property Management",
-          description: "Property management site with custom CMS platform",
-          imageHover: "/img/fairmont.jpg",
-          imageBackground: "/img/fairmont_bw.jpg",
+          shortDescription: "Property management site with custom CMS platform",
+          longDescription: "",
+          imageHover: "/img/fairmont/fairmont.jpg",
+          imageBackground: "/img/fairmont/fairmont_bw.jpg",
+          imageDesktop: "/img/fairmont/fairmont_desktop.png",
           index: 2
         }
-      ],
-      selectedProject: {}
+      }
     };
   }
 
-  handleSelectedProject = projectId => {
-    this.setState({
-      selectedProject: projectId
-    });
-  };
-
   render() {
-    const { projects, selectedProject } = this.state;
+    const { projects } = this.state;
     return (
       <div className="view-container-positioner">
         <div className="view-container-body">
@@ -48,17 +46,14 @@ export default class ViewContainer extends Component {
             <Route
               exact
               path="/projects"
-              component={() => (
-                <Portfolio
-                  projects={projects}
-                  handleSelectedProject={this.handleSelectedProject}
-                />
-              )}
+              component={() => <Portfolio projects={projects} />}
             />
             <Route
               exact
-              path="/projects/:projectId"
-              component={() => <ProjectPage project={projects} />}
+              path="/projects/:projectName"
+              component={props => (
+                <ProjectPage match={props.match} projects={projects} />
+              )}
             />
             <Route path="/" component={Home} />
           </Switch>

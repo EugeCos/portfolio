@@ -31,72 +31,71 @@ export default class Portfolio extends Component {
 
   render() {
     const { hoveredProject, hover } = this.state;
-    const { projects, handleSelectedProject } = this.props;
-    let projectJSX = projects.map(project => {
+    const { projects } = this.props;
+
+    let projectJSX = Object.keys(projects).map(key => {
+      const currentProject = projects[key];
       return (
         <Link
-          to={`/projects/${project.index}`}
-          key={project.index}
+          to={`/projects/${key}`}
+          key={currentProject.index}
           className="project-container"
         >
           <div
-            onMouseEnter={() => this.hoverOn(project.name)}
-            onMouseLeave={() => this.hoverOff(project.name)}
-            onClick={() => {
-              handleSelectedProject(project.index);
-            }}
+            onMouseEnter={() => this.hoverOn(currentProject.name)}
+            onMouseLeave={() => this.hoverOff(currentProject.name)}
           >
             <div
               className={`${
-                hoveredProject === project.name
+                hoveredProject === currentProject.name
                   ? "project-number-hover"
                   : "project-number"
               }`}
             >
-              {project.index}
+              {currentProject.index}
             </div>
             <img
               className="project-image"
               src={
                 hover
-                  ? hoveredProject === project.name
-                    ? project.imageHover
-                    : project.imageBackground
-                  : project.imageBackground
+                  ? hoveredProject === currentProject.name
+                    ? currentProject.imageHover
+                    : currentProject.imageBackground
+                  : currentProject.imageBackground
               }
               alt="project"
             />
             <div
               className={`${
-                hoveredProject === project.name
+                hoveredProject === currentProject.name
                   ? "hover-style hover-overlay"
                   : "dark-overlay"
               }`}
             />
             <div
               className={`${
-                hoveredProject === project.name
+                hoveredProject === currentProject.name
                   ? "project-name-container-hover"
                   : "project-name-container"
               }`}
             >
               <h3
                 className={`${
-                  hoveredProject === project.name
+                  hoveredProject === currentProject.name
                     ? "project-name-hover"
                     : "project-name"
                 }`}
               >
-                {project.name}
+                {currentProject.name}
               </h3>
               <h4
                 className={`${
-                  hoveredProject === project.name
+                  hoveredProject === currentProject.name
                     ? "project-description-hover"
                     : "project-description"
                 }`}
               >
-                {project.description}
+                {currentProject.shortDescription}
               </h4>
             </div>
           </div>

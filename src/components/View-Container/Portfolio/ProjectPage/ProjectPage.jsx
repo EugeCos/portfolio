@@ -7,7 +7,10 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 export default class ProjectPage extends Component {
   render() {
-    console.log(this.props.match.params);
+    const { projects, match } = this.props;
+    const name = match.params.projectName;
+    const project = projects[name];
+
     return (
       <ReactCSSTransitionGroup
         transitionAppear={true}
@@ -15,7 +18,24 @@ export default class ProjectPage extends Component {
         transitionName="fade-effect"
       >
         <div className="selected-project-container">
-          <h2>Project Page</h2>
+          <div className="selected-project-header">
+            <h2>{project.name}</h2>
+            <hr className="pink-hr" />
+          </div>
+
+          <div className="selected-project-content">
+            <section className="selected-project-content">
+              <div className="desktop-content-wrapper">
+                <div
+                  className="desktop-image"
+                  style={{
+                    backgroundImage: `url(${project.imageDesktop})`
+                  }}
+                />
+                <h3>{project.longDescription}</h3>
+              </div>
+            </section>
+          </div>
         </div>
       </ReactCSSTransitionGroup>
     );
