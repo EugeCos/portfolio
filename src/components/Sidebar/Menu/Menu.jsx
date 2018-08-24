@@ -59,6 +59,7 @@ export default class Menu extends Component {
     let socialIconsJSX = socialIcons.map(socialItem => {
       return (
         <i
+          key={socialItem.name}
           className={`social-icon ${socialItem.icon}`}
           onClick={() => window.open(socialItem.link, "_blank")}
         />

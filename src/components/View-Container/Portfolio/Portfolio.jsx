@@ -1,28 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Portfolio.less";
+
+// ----------REACT-CSS-TRANSITION-GROUP-----------
+// css rules for transtions are located in global.css
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 export default class Portfolio extends Component {
   constructor() {
     super();
     this.state = {
       hover: false,
-      hoveredProject: "",
-      projects: [
-        {
-          name: "Velvet Crypto",
-          description: "Cryptocurrency exchange app",
-          imageHover: "/img/velvet.jpg",
-          imageBackground: "/img/velvet_bw.jpg",
-          index: 1
-        },
-        {
-          name: "Fairmont Property Management",
-          description: "Property management site with custom CMS platform",
-          imageHover: "/img/fairmont.jpg",
-          imageBackground: "/img/fairmont_bw.jpg",
-          index: 2
-        }
-      ]
+      hoveredProject: ""
     };
   }
 
@@ -41,77 +30,93 @@ export default class Portfolio extends Component {
   };
 
   render() {
-    const { projects, hoveredProject, hover } = this.state;
+    const { hoveredProject, hover } = this.state;
+    const { projects, handleSelectedProject } = this.props;
     let projectJSX = projects.map(project => {
       return (
-        <div
-          className="project-container"
+        <Link
+          to={`/projects/${project.index}`}
           key={project.index}
-          onMouseEnter={() => this.hoverOn(project.name)}
-          onMouseLeave={() => this.hoverOff(project.name)}
+          className="project-container"
         >
           <div
-            className={`${
-              hoveredProject === project.name
-                ? "project-number-hover"
-                : "project-number"
-            }`}
+            onMouseEnter={() => this.hoverOn(project.name)}
+            onMouseLeave={() => this.hoverOff(project.name)}
+            onClick={() => {
+              handleSelectedProject(project.index);
+            }}
           >
-            {project.index}
-          </div>
-          <img
-            className="project-image"
-            src={
-              hover
-                ? hoveredProject === project.name
-                  ? project.imageHover
+            <div
+              className={`${
+                hoveredProject === project.name
+                  ? "project-number-hover"
+                  : "project-number"
+              }`}
+            >
+              {project.index}
+            </div>
+            <img
+              className="project-image"
+              src={
+                hover
+                  ? hoveredProject === project.name
+                    ? project.imageHover
+                    : project.imageBackground
                   : project.imageBackground
-                : project.imageBackground
-            }
-            alt="project"
-          />
-          <div
-            className={`${
-              hoveredProject === project.name
-                ? "hover-style hover-overlay"
-                : "dark-overlay"
-            }`}
-          />
-          <div
-            className={`${
-              hoveredProject === project.name
-                ? "project-name-container-hover"
-                : "project-name-container"
-            }`}
-          >
-            <h3
+              }
+              alt="project"
+            />
+            <div
               className={`${
                 hoveredProject === project.name
-                  ? "project-name-hover"
-                  : "project-name"
+                  ? "hover-style hover-overlay"
+                  : "dark-overlay"
               }`}
-            >
-              {project.name}
-            </h3>
-            <h4
+            />
+            <div
               className={`${
                 hoveredProject === project.name
-                  ? "project-description-hover"
-                  : "project-description"
+                  ? "project-name-container-hover"
+                  : "project-name-container"
               }`}
             >
-              {project.description}
-            </h4>
+              <h3
+                className={`${
+                  hoveredProject === project.name
+                    ? "project-name-hover"
+                    : "project-name"
+                }`}
+              >
+                {project.name}
+              </h3>
+              <h4
+                className={`${
+                  hoveredProject === project.name
+                    ? "project-description-hover"
+                    : "project-description"
+                }`}
+              >
+                {project.description}
+              </h4>
+            </div>
           </div>
-        </div>
+        </Link>
       );
     });
 
     return (
-      <div className="portfolio-container">
-        <h3 className="portfolio-header">PROJECTS</h3>
-        {projectJSX}
-      </div>
+      <ReactCSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={300}
+        transitionName="fade-effect"
+      >
+        <div className="portfolio-container">
+          <div className="portfolio-header">
+            <h2>PROJECTS</h2>
+          </div>
+          <div className="projects-wrapper">{projectJSX}</div>
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

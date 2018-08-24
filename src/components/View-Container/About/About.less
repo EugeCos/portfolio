@@ -7,33 +7,29 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  background: rgba(196, 217, 245, 0.788);
+  background: rgba(0, 0, 0, 0.2);
+
+  h2,
+  h3 {
+    color: #eaeaea;
+  }
 }
 
 .first-letter {
   font-size: 35px;
-  line-height: 30px;
+  line-height: 25px;
 }
 
-.stars-container {
-  display: flex;
-  justify-content: center;
+.header-container {
+  text-align: center;
   padding: 5px 0 21px;
+  letter-spacing: 5px;
 
-  .far {
-    font-size: 20px;
-    padding: 0 30px;
-    color: #ffeaa7;
-    text-shadow: 0 0 35px #000000;
+  hr.about-hr {
+    margin: 15px auto 0;
+    width: 15%;
+    height: 3px;
+    border: none;
+    background-image: linear-gradient(to right, #ff7675, #ff7675);
   }
-}
-
-// Starting state of entry animation
-.fade-effect-appear {
-  opacity: 0.01;
-}
-
-.fade-effect-appear.fade-effect-appear-active {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
 }

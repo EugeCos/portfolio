@@ -14,3 +14,12 @@ h6 {
   padding: 0;
   color: #222f3e;
 }
+
+// Starting state of entry animation
+.fade-effect-appear {
+  opacity: 0.01;
+}
+.fade-effect-appear.fade-effect-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
