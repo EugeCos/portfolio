@@ -29,6 +29,10 @@ export default class Portfolio extends Component {
     });
   };
 
+  componentWillMount() {
+    this.props.checkIfLandedFromAnotherPage();
+  }
+
   render() {
     const { hoveredProject, hover } = this.state;
     const { projects } = this.props;

@@ -7,17 +7,19 @@ import Home from "./Home/Home";
 import About from "./About/About";
 import Portfolio from "./Portfolio/Portfolio";
 import ProjectPage from "./Portfolio/ProjectPage/ProjectPage";
+import Contact from "./Contact/Contact";
 
 export default class ViewContainer extends Component {
   constructor() {
     super();
     this.state = {
+      landedHomeFromAnotherPage: false,
       projects: {
         velvet: {
           name: "Velvet Crypto",
           shortDescription: "Cryptocurrency exchange app",
           longDescription:
-            "A serverless web-app that allows users to look up cryptocurrencies from a database of 2500+ options and perform basic virtual trade manipulations (buy and sell coins)",
+            "A serverless web-app that allows users to look up cryptocurrencies from a database of 2500+ options and perform basic virtual trade manipulations (buy and sell coins). Please wait for up to 15 seconds as the free Heroku server fires up for the app.",
           tech: ["React / Redux", "Axios", "Material-UI", "Less"],
           imageHover: "/img/velvet/velvet.jpg",
           imageBackground: "/img/velvet/velvet_bw.jpg",
@@ -51,26 +53,73 @@ export default class ViewContainer extends Component {
     };
   }
 
+  // When user visits HOME page initially, quotes appear after 6 seconds.
+  // If user comes back to HOME from another page, quotes appear after 0.5 seconds.
+  checkIfLandedFromAnotherPage = () => {
+    if (!this.state.landedHomeFromAnotherPage) {
+      this.setState({
+        landedHomeFromAnotherPage: true
+      });
+    }
+  };
+
   render() {
-    const { projects } = this.state;
+    const { projects, landedHomeFromAnotherPage } = this.state;
     return (
       <div className="view-container-positioner">
         <div className="view-container-body">
           <Switch>
-            <Route path="/about" component={About} />
+            <Route
+              path="/about"
+              component={() => (
+                <About
+                  checkIfLandedFromAnotherPage={
+                    this.checkIfLandedFromAnotherPage
+                  }
+                />
+              )}
+            />
             <Route
               exact
               path="/projects"
-              component={() => <Portfolio projects={projects} />}
+              component={() => (
+                <Portfolio
+                  projects={projects}
+                  checkIfLandedFromAnotherPage={
+                    this.checkIfLandedFromAnotherPage
+                  }
+                />
+              )}
             />
             <Route
               exact
               path="/projects/:projectName"
               component={props => (
-                <ProjectPage match={props.match} projects={projects} />
+                <ProjectPage
+                  match={props.match}
+                  projects={projects}
+                  checkIfLandedFromAnotherPage={
+                    this.checkIfLandedFromAnotherPage
+                  }
+                />
               )}
             />
-            <Route path="/" component={Home} />
+            <Route
+              path="/you-used-to-call-me-on-my-cell-phone"
+              component={() => (
+                <Contact
+                  checkIfLandedFromAnotherPage={
+                    this.checkIfLandedFromAnotherPage
+                  }
+                />
+              )}
+            />
+            <Route
+              path="/"
+              component={() => (
+                <Home landedHomeFromAnotherPage={landedHomeFromAnotherPage} />
+              )}
+            />
           </Switch>
 
           <video

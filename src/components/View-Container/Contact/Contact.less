@@ -1,0 +1,148 @@
+.contact-container {
+  margin: 120px auto;
+  padding-bottom: 40px;
+  width: 80%;
+  position: relative;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.2);
+
+  h3 {
+    color: #eaeaea;
+  }
+}
+
+.contact-header {
+  text-align: center;
+  padding: 5px 0;
+
+  .name-email {
+    display: inline-block;
+    margin: 15px 0;
+
+    h3 {
+      font-size: 140%;
+      letter-spacing: 2px;
+      padding-bottom: 4px;
+    }
+
+    a {
+      color: #aab7c5;
+      font-size: 110%;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: text-shadow 0.5s ease-in-out;
+      &:hover {
+        text-shadow: 0 0 45px #fff;
+      }
+    }
+  }
+
+  h2 {
+    margin: 30px 0 0;
+    color: #eaeaea;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+}
+
+.linkedin-github-wrapper {
+  margin: 10px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 2px;
+
+  h4 {
+    color: #aab7c5;
+    font-size: 110%;
+    padding-top: 6px;
+    letter-spacing: 1px;
+  }
+}
+
+.social-name {
+  font-size: 130%;
+  padding-bottom: 8px;
+  background-image: linear-gradient(to right, #703250, #e84393);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 30px 2px;
+  transition: background-size 0.5s ease, letter-spacing 0.5s ease;
+}
+
+.social-name-hover {
+  font-size: 130%;
+  padding-bottom: 8px;
+  background-image: linear-gradient(to right, #703250, #e84393);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  letter-spacing: 4px;
+  transition: background-size 0.5s ease, letter-spacing 0.5s ease;
+}
+
+.linkedin,
+.github {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h4 {
+    font-weight: 100;
+    transition: text-shadow 0.4s ease;
+  }
+}
+
+.linkedin-hover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h4 {
+    font-weight: 100;
+    text-shadow: 0 0 45px #e84393;
+    cursor: pointer;
+    transition: text-shadow 0.4s ease;
+  }
+}
+
+.github-hover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h4 {
+    font-weight: 100;
+    text-shadow: 0 0 45px #55efc4;
+    cursor: pointer;
+    transition: text-shadow 0.5s ease;
+  }
+}
+
+.resume {
+  display: inline-block;
+  margin: 30px auto 0;
+  letter-spacing: 2px;
+
+  h4 {
+    transition: text-shadow 0.4s ease;
+    font-weight: 100;
+    color: #aab7c5;
+    font-size: 110%;
+    padding-top: 6px;
+    letter-spacing: 1px;
+  }
+}
+
+.resume-hover {
+  display: inline-block;
+  margin: 30px auto 0;
+  letter-spacing: 2px;
+  h4 {
+    font-weight: 100;
+    text-shadow: 0 0 45px #fdcb6e;
+    color: #aab7c5;
+    font-size: 110%;
+    padding-top: 6px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: text-shadow 0.4s ease;
+  }
+}

@@ -66,13 +66,24 @@ export default class Home extends Component {
   };
 
   componentWillMount() {
-    setTimeout(
-      () =>
-        this.setState({ fading: false }, () =>
-          setInterval(this.updateQuote, 6000)
-        ),
-      3500
-    );
+    const { landedHomeFromAnotherPage } = this.props;
+    if (!landedHomeFromAnotherPage) {
+      setTimeout(
+        () =>
+          this.setState({ fading: false }, () =>
+            setInterval(this.updateQuote, 6000)
+          ),
+        3500
+      );
+    } else {
+      setTimeout(
+        () =>
+          this.setState({ fading: false }, () =>
+            setInterval(this.updateQuote, 6000)
+          ),
+        500
+      );
+    }
   }
 
   render() {

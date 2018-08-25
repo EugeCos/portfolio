@@ -6,6 +6,10 @@ import "./About.less";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 export default class About extends Component {
+  componentWillMount() {
+    this.props.checkIfLandedFromAnotherPage();
+  }
+
   render() {
     return (
       <ReactCSSTransitionGroup
@@ -21,8 +25,8 @@ export default class About extends Component {
 
           <h3>
             <span className="first-letter">I</span>
-            &nbsp;am happy to see you, hope the splashing water doesn't distract
-            you much from reading my little story.
+            &nbsp;am happy to see you here, hope the splashing water doesn't
+            distract you much from reading my little story.
           </h3>
           <br />
           <h3>

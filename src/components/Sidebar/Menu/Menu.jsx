@@ -21,7 +21,7 @@ export default class Menu extends Component {
         },
         {
           name: "Contact",
-          link: "/contact"
+          link: "/you-used-to-call-me-on-my-cell-phone"
         }
       ],
       socialIcons: [

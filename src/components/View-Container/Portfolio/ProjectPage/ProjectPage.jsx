@@ -7,6 +7,10 @@ import "./ProjectPage.less";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 export default class ProjectPage extends Component {
+  componentWillMount() {
+    this.props.checkIfLandedFromAnotherPage();
+  }
+
   render() {
     const { projects, match } = this.props;
     const name = match.params.projectName;
