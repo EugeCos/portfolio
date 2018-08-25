@@ -1,5 +1,6 @@
 .selected-project-container {
   margin: 120px auto;
+  padding-bottom: 30px;
   width: 80%;
   position: relative;
   z-index: 3;
@@ -65,7 +66,7 @@
   // border: 1px solid red;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .mobile-text-wrapper {
   width: 35%;
@@ -103,5 +104,41 @@
     background-size: contain;
     background-repeat: no-repeat;
     // border: 1px solid red;
+  }
+}
+// -------------------------------
+
+// -----------BUTTONS------------
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+
+  .custom-btn {
+    display: inline-block;
+    border-radius: 2px;
+    width: 130px;
+    margin: 0 30px;
+    padding: 10px 10px;
+    color: #eaeaea;
+    font-size: 110%;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+  }
+
+  .btn-back {
+    border: 1px solid #bdc3c7;
+    &:hover {
+      background: #bdc3c74f;
+    }
+  }
+
+  .btn-visit {
+    border: 1px solid #ff7675;
+    &:hover {
+      background: #ffacac4f;
+    }
   }
 }

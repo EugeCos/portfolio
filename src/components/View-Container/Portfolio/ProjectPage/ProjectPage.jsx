@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./ProjectPage.less";
 
 // ----------REACT-CSS-TRANSITION-GROUP-----------
@@ -10,7 +11,6 @@ export default class ProjectPage extends Component {
     const { projects, match } = this.props;
     const name = match.params.projectName;
     const project = projects[name];
-    console.log(project.imageMobile1);
 
     let techUsedJSX = project.tech.map(item => {
       return (
@@ -63,6 +63,18 @@ export default class ProjectPage extends Component {
               <div className="mobile-text-wrapper">{techUsedJSX}</div>
               <div className="mobile-image-wrapper">{mobileImagesJSX}</div>
             </section>
+          </div>
+
+          <div className="buttons-container">
+            <Link to="/projects" className="custom-btn btn-back">
+              back
+            </Link>
+            <span
+              onClick={() => window.open(`${project.link}`, "_blank")}
+              className="custom-btn btn-visit"
+            >
+              visit project
+            </span>
           </div>
         </div>
       </ReactCSSTransitionGroup>

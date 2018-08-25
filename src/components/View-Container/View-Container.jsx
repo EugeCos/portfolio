@@ -27,6 +27,7 @@ export default class ViewContainer extends Component {
             "/img/velvet/velvet_ipad.png",
             "/img/velvet/velvet_mobile_2.png"
           ],
+          link: "https://velvet-crypto.herokuapp.com/",
           index: 1
         },
         fairmont: {
@@ -43,6 +44,7 @@ export default class ViewContainer extends Component {
             "/img/fairmont/fairmont_ipad.png",
             "/img/fairmont/fairmont_mobile_2.png"
           ],
+          link: "https://fairmontmanagement.com/",
           index: 2
         }
       }
