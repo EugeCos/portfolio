@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./ProjectPage.less";
 
 // ----------REACT-CSS-TRANSITION-GROUP-----------
@@ -10,6 +10,27 @@ export default class ProjectPage extends Component {
     const { projects, match } = this.props;
     const name = match.params.projectName;
     const project = projects[name];
+    console.log(project.imageMobile1);
+
+    let techUsedJSX = project.tech.map(item => {
+      return (
+        <div className="tech-wrapper" key={item}>
+          <i className="far fa-star" />
+          <h3>{item}</h3>
+        </div>
+      );
+    });
+
+    let mobileImagesJSX = project.imagesMobile.map(image => {
+      return (
+        <div
+          className="mobile-image"
+          style={{
+            backgroundImage: `url(${image})`
+          }}
+        />
+      );
+    });
 
     return (
       <ReactCSSTransitionGroup
@@ -24,16 +45,23 @@ export default class ProjectPage extends Component {
           </div>
 
           <div className="selected-project-content">
-            <section className="selected-project-content">
-              <div className="desktop-content-wrapper">
+            <section className="desktop-content-wrapper">
+              <div className="desktop-image-wrapper">
                 <div
                   className="desktop-image"
                   style={{
                     backgroundImage: `url(${project.imageDesktop})`
                   }}
                 />
+              </div>
+              <div className="desktop-text-wrapper">
                 <h3>{project.longDescription}</h3>
               </div>
+            </section>
+
+            <section className="mobile-content-wrapper">
+              <div className="mobile-text-wrapper">{techUsedJSX}</div>
+              <div className="mobile-image-wrapper">{mobileImagesJSX}</div>
             </section>
           </div>
         </div>

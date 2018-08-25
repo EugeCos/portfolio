@@ -112,6 +112,7 @@ export default class Portfolio extends Component {
         <div className="portfolio-container">
           <div className="portfolio-header">
             <h2>PROJECTS</h2>
+            <hr className="pink-hr" />
           </div>
           <div className="projects-wrapper">{projectJSX}</div>
         </div>
