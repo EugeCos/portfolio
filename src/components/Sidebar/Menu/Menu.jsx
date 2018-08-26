@@ -41,7 +41,7 @@ export default class Menu extends Component {
 
   render() {
     const { menuItems, socialIcons } = this.state;
-    const { toggleMenuIcon } = this.props;
+    const { toggleMenuIcon, closeMenu } = this.props;
 
     let menuItemsJSX = menuItems.map(item => {
       return (
@@ -51,6 +51,7 @@ export default class Menu extends Component {
           className={`menu-item ${item.name.replace(/\s/g, "").toLowerCase()} ${
             window.location.pathname === item.link ? "selected" : ""
           }`}
+          onClick={closeMenu}
         >
           {item.name}
         </Link>

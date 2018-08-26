@@ -16,10 +16,13 @@ export default class Portfolio extends Component {
   }
 
   hoverOn = projectName => {
-    this.setState({
-      hover: true,
-      hoveredProject: projectName
-    });
+    const { screenWidth } = this.props;
+    if (screenWidth > 1024) {
+      this.setState({
+        hover: true,
+        hoveredProject: projectName
+      });
+    }
   };
 
   hoverOff = () => {

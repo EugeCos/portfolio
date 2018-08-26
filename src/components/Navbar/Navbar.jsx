@@ -14,11 +14,17 @@ const darkBG = {
 
 export default class Navbar extends Component {
   render() {
-    const { toggleMenuIcon, toggleMenuIconFunction } = this.props;
+    const { toggleMenuIcon, screenWidth, toggleMenuIconFunction } = this.props;
     return (
       <div className="navbar">
         <Link to="/" className="navbar-link">
-          <h3 style={window.location.pathname !== "/" ? darkBG : lightBG}>
+          <h3
+            style={
+              window.location.pathname !== "/" && screenWidth > 1024
+                ? darkBG
+                : lightBG
+            }
+          >
             Eugeville
           </h3>
         </Link>

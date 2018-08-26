@@ -9,7 +9,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 12px;
-  z-index: 3;
+  z-index: 4;
 
   h3 {
     font-size: 250%;
@@ -20,8 +20,13 @@
       font-size: 230%;
     }
     @media screen and(max-width: 1024px) {
-      font-size: 180%;
+      font-size: 160%;
       padding-left: 15%;
+    }
+    @media screen and(max-width: 480px) {
+      font-size: 110%;
+      padding-left: 10%;
+      font-weight: 600;
     }
   }
   @media screen and(max-width: 1024px) {
@@ -31,8 +36,10 @@
     width: 100%;
     left: 0;
     height: 45px;
+    letter-spacing: 8px;
     padding: 0;
-    border-bottom: 1px solid @font-color-dark;
+    border-bottom: 1px solid #b2bec3;
+    box-shadow: 0px 0px 5px #b2bec3;
     background: @font-color-light;
   }
 }

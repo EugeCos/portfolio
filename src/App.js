@@ -10,7 +10,7 @@ import ViewContainer from "./components/View-Container/View-Container";
 class App extends Component {
   constructor() {
     super();
-    this.state = { toggleMenuIcon: false };
+    this.state = { toggleMenuIcon: false, screenWidth: undefined };
   }
 
   toggleMenuIcon = () => {
@@ -19,19 +19,41 @@ class App extends Component {
     });
   };
 
+  closeMenu = () => {
+    this.setState({
+      toggleMenuIcon: false
+    });
+  };
+
+  getScreenWidth = () => {
+    this.setState({
+      screenWidth: window.innerWidth
+    });
+  };
+
+  componentWillMount() {
+    this.getScreenWidth();
+    window.addEventListener("resize", this.getScreenWidth);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.getScreenWidth);
+  }
+
   render() {
-    const { toggleMenuIcon } = this.state;
+    const { toggleMenuIcon, screenWidth } = this.state;
     return (
       <div className="App">
         <Navbar
+          screenWidth={screenWidth}
           toggleMenuIcon={toggleMenuIcon}
           toggleMenuIconFunction={this.toggleMenuIcon}
         />
         <Sidebar
           toggleMenuIcon={toggleMenuIcon}
           toggleMenuIconFunction={this.toggleMenuIcon}
+          closeMenu={this.closeMenu}
         />
-        <ViewContainer />
+        <ViewContainer screenWidth={screenWidth} />
       </div>
     );
   }

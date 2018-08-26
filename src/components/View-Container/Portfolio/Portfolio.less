@@ -1,15 +1,36 @@
+@import "../../../css/export.less";
+
 .portfolio-container {
   margin: 120px auto;
-  width: 80%;
+  width: 85%;
   position: relative;
-  z-index: 3;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.2);
+  padding-bottom: 40px;
+  overflow-y: hidden;
+  @media screen and(max-width: 1024px) {
+    margin: 80px auto 30px;
+    width: 85%;
+    padding: 35px 45px;
+  }
+  @media screen and(max-width: 480px) {
+    width: 90%;
+    padding-bottom: 60%;
+    margin: 20px 0;
+    padding: 45px 10px 0;
+  }
 }
 
 .projects-wrapper {
   display: flex;
   justify-content: space-around;
-  padding: 12px 45px 30px;
+  @media screen and(max-width: 1024px) {
+    padding: 4px 0 10px;
+  }
+  @media screen and(max-width: 780px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .portfolio-header {
@@ -18,8 +39,12 @@
 
   h2 {
     margin: 30px 0 0;
-    color: #eaeaea;
+    color: @font-color-light;
     letter-spacing: 5px;
+    @media screen and(max-width: 1024px) {
+      margin: 0;
+      font-size: 120%;
+    }
   }
 }
 
@@ -28,11 +53,16 @@
   position: relative;
   margin: 20px;
   width: 40%;
-  height: 350px;
+  padding-bottom: 28%;
   transition: opacity 0.2s ease-in;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #7f8fa6;
   overflow: hidden;
+  @media screen and(max-width: 780px) {
+    width: 90%;
+    padding-bottom: 60%;
+    margin: 20px 0;
+  }
 }
 
 .project-image {
@@ -54,30 +84,49 @@
 
   h3 {
     text-transform: uppercase;
+    @media screen and(max-width: 1024px) {
+      font-size: 105%;
+    }
+    @media screen and(max-width: 480px) {
+      font-size: 90%;
+    }
+  }
+  @media screen and(max-width: 480px) {
+    top: 60%;
   }
 }
 
 .project-name-container-hover {
   position: absolute;
   cursor: pointer;
-  top: 65%;
+  top: 63%;
   width: 100%;
   height: 100%;
   letter-spacing: 2px;
   background: rgba(0, 0, 0, 0.8);
   transition: background 0.2s ease, top 0.5s ease;
+  @media screen and(max-width: 1369px) {
+    top: 60%;
+  }
 
   h3 {
     text-transform: uppercase;
+    @media screen and(max-width: 1024px) {
+      font-size: 105%;
+    }
   }
 }
 
 .project-name {
-  color: #eaeaea;
+  color: @font-color-light;
   display: inline-block;
-  margin: 25px 0 0 50px;
+  margin: 4% 0 0 7%;
   padding-bottom: 6px;
-  background-image: linear-gradient(to right, #ff7675, #ff7675);
+  background-image: linear-gradient(
+    to right,
+    @attention-color,
+    @attention-color
+  );
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 50% 2px;
@@ -85,11 +134,15 @@
 }
 
 .project-name-hover {
-  color: #eaeaea;
+  color: @font-color-light;
   display: inline-block;
-  margin: 25px 0 0 50px;
+  margin: 4% 0 0 7%;
   padding-bottom: 6px;
-  background-image: linear-gradient(to right, #ff7675, #ff7675);
+  background-image: linear-gradient(
+    to right,
+    @attention-color,
+    @attention-color
+  );
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 100% 2px;
@@ -102,47 +155,66 @@
 
 .project-description-hover {
   opacity: 1;
-  color: #eaeaea;
-  display: inline-block;
-  margin: 8px 30px 50px 50px;
+  color: @font-color-light;
+  margin: 8px 30px 50px 7%;
   transition: opacity 0.5s ease;
+  @media screen and(max-width: 1024px) {
+    font-size: 95%;
+  }
 }
 
 .project-number {
-  font-size: 300%;
+  font-size: 250%;
   position: absolute;
   z-index: 2;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 4px solid #ff7675;
+  border: 4px solid @attention-color;
   text-align: center;
-  color: #ff7675;
+  color: @attention-color;
   border-radius: 50%;
   display: inline;
   width: 80px;
   line-height: 80px;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease, font-size 0.5s ease, width 0.5s ease,
+    line-height 0.5s ease;
+  @media screen and(max-width: 1368px) {
+    width: 65px;
+    line-height: 65px;
+  }
+  @media screen and(max-width: 480px) {
+    top: 40%;
+    font-size: 160%;
+    width: 35px;
+    line-height: 35px;
+    border: 2px solid @attention-color;
+  }
 }
 
 .project-number-hover {
-  font-size: 300%;
+  font-size: 600%;
   cursor: pointer;
   position: absolute;
   z-index: 2;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 4px solid #ff7675;
+  border: 4px solid @attention-color;
   text-align: center;
-  color: #ff7675;
+  color: @attention-color;
   border-radius: 50%;
   display: inline;
-  width: 80px;
-  line-height: 80px;
+  width: 160px;
+  line-height: 160px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease, font-size 0.5s ease, width 0.5s ease,
+    line-height 0.5s ease;
+  @media screen and(max-width: 1368px) {
+    width: 135px;
+    line-height: 135px;
+  }
 }
 
 .dark-overlay {

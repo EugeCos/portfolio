@@ -1,12 +1,15 @@
 .view-container-positioner {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   width: 80%;
   height: 100vh;
   left: 20%;
   @media screen and(max-width: 1024px) {
+    overflow-y: auto;
     width: 100%;
     left: 0;
+    height: 100%;
   }
 }
 
@@ -23,6 +26,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+  @media screen and(max-width: 1024px) {
+    position: fixed;
+  }
 }
 
 .dark-video-overlay {
@@ -33,6 +39,9 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s ease;
+  @media screen and(max-width: 1024px) {
+    position: fixed;
+  }
 }
 
 .dark-video-overlay-none {
