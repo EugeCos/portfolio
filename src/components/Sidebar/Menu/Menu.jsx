@@ -41,13 +41,14 @@ export default class Menu extends Component {
 
   render() {
     const { menuItems, socialIcons } = this.state;
+    const { toggleMenuIcon } = this.props;
 
     let menuItemsJSX = menuItems.map(item => {
       return (
         <Link
           to={item.link}
           key={item.name}
-          className={`menu-item ${
+          className={`menu-item ${item.name.replace(/\s/g, "").toLowerCase()} ${
             window.location.pathname === item.link ? "selected" : ""
           }`}
         >
@@ -67,7 +68,7 @@ export default class Menu extends Component {
     });
 
     return (
-      <div className="menu-items-container">
+      <div className={`menu-items-container ${toggleMenuIcon ? "" : "hide"}`}>
         <div className="menu-item-wrapper">{menuItemsJSX}</div>
         <hr className="hr-styled" />
         <div className="social-links-wrapper">{socialIconsJSX}</div>

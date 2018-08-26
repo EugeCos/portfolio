@@ -8,11 +8,29 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import ViewContainer from "./components/View-Container/View-Container";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { toggleMenuIcon: false };
+  }
+
+  toggleMenuIcon = () => {
+    this.setState({
+      toggleMenuIcon: !this.state.toggleMenuIcon
+    });
+  };
+
   render() {
+    const { toggleMenuIcon } = this.state;
     return (
       <div className="App">
-        <Sidebar />
-        <Navbar />
+        <Navbar
+          toggleMenuIcon={toggleMenuIcon}
+          toggleMenuIconFunction={this.toggleMenuIcon}
+        />
+        <Sidebar
+          toggleMenuIcon={toggleMenuIcon}
+          toggleMenuIconFunction={this.toggleMenuIcon}
+        />
         <ViewContainer />
       </div>
     );

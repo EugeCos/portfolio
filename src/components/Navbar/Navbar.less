@@ -1,23 +1,78 @@
+@import "../../css/export.less";
+
 .navbar {
   position: fixed;
   width: 80%;
   left: 20%;
   top: 0;
-  z-index: 1;
   padding: 20px 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 12px;
-  background: rgba(255, 255, 255, 0);
+  z-index: 3;
 
   h3 {
     font-size: 250%;
     font-weight: 100;
     display: inline;
+
+    @media screen and(max-width: 1368px) {
+      font-size: 230%;
+    }
+    @media screen and(max-width: 1024px) {
+      font-size: 180%;
+      padding-left: 15%;
+    }
+  }
+  @media screen and(max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    height: 45px;
+    padding: 0;
+    border-bottom: 1px solid @font-color-dark;
+    background: @font-color-light;
   }
 }
 
 .navbar-link {
   text-decoration: none;
   color: initial;
+}
+
+// -----------------------------------
+// Mobile Menu Icons
+// -----------------------------------
+.three-bars-icon-container {
+  display: inline-block;
+  cursor: pointer;
+  min-height: 22px;
+  padding-right: 20px;
+  z-index: 10;
+  .bar-1,
+  .bar-2,
+  .bar-3 {
+    width: 30px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: @font-color-dark;
+    transition: 0.3s;
+  }
+  .bar-2 {
+    margin: 5px 0;
+  }
+  .change-1 {
+    transform: translate(0px, 9px) rotate(-45deg);
+  }
+  .change-2 {
+    opacity: 0;
+  }
+  .change-3 {
+    transform: translate(0px, -9px) rotate(45deg);
+  }
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.less";
 
@@ -12,16 +12,25 @@ const darkBG = {
   textShadow: "0 0 35px #fff"
 };
 
-const Navbar = () => {
-  return (
-    <div className="navbar">
-      <Link to="/" className="navbar-link">
-        <h3 style={window.location.pathname !== "/" ? darkBG : lightBG}>
-          Eugeville
-        </h3>
-      </Link>
-    </div>
-  );
-};
-
-export default Navbar;
+export default class Navbar extends Component {
+  render() {
+    const { toggleMenuIcon, toggleMenuIconFunction } = this.props;
+    return (
+      <div className="navbar">
+        <Link to="/" className="navbar-link">
+          <h3 style={window.location.pathname !== "/" ? darkBG : lightBG}>
+            Eugeville
+          </h3>
+        </Link>
+        <div
+          className="three-bars-icon-container"
+          onClick={toggleMenuIconFunction}
+        >
+          <div className={`bar-1 ${toggleMenuIcon ? "change-1" : ""}`} />
+          <div className={`bar-2 ${toggleMenuIcon ? "change-2" : ""}`} />
+          <div className={`bar-3 ${toggleMenuIcon ? "change-3" : ""}`} />
+        </div>
+      </div>
+    );
+  }
+}

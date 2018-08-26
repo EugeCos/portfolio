@@ -7,13 +7,25 @@ import Menu from "./Menu/Menu";
 
 export default class Sidebar extends Component {
   render() {
+    const { toggleMenuIcon, toggleMenuIconFunction } = this.props;
     return (
       <div className="sidebar-positioner">
         <div className="sidebar-container">
           <Bio />
           <hr className="hr-styled" />
-          <Menu />
+          <Menu toggleMenuIcon={toggleMenuIcon} />
         </div>
+
+        {/* Background dark overlay  */}
+        <div
+          onClick={toggleMenuIconFunction}
+          className="overlay"
+          style={
+            toggleMenuIcon
+              ? { background: "#000000" }
+              : { background: "transparent", pointerEvents: "none" }
+          }
+        />
       </div>
     );
   }
