@@ -5,7 +5,11 @@ const Bio = () => {
   return (
     <div className="bio-container">
       <img
-        src="/img/headshot.jpg"
+        src={
+          window.location.pathname === "/about"
+            ? "/img/headshot_mustachio.jpg"
+            : "/img/headshot.jpg"
+        }
         alt="headshot"
         className="profile-headshot"
       />
