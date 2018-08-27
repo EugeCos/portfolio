@@ -15,10 +15,13 @@ export default class Contact extends Component {
   }
 
   hoverOn = hoveredElement => {
-    this.setState({
-      hovered: true,
-      hoveredElement
-    });
+    const { screenWidth } = this.props;
+    if (screenWidth > 1024) {
+      this.setState({
+        hovered: true,
+        hoveredElement
+      });
+    }
   };
 
   hoverOff = () => {
@@ -52,84 +55,83 @@ export default class Contact extends Component {
                 eugene.costov@gmail.com
               </a>
             </div>
-
-            <div className="linkedin-github-wrapper">
-              <div
-                className={`${
-                  hoveredElement === "linkedin" ? "linkedin-hover" : "linkedin"
-                }`}
-              >
-                <h3
-                  className={`${
-                    hoveredElement === "linkedin"
-                      ? "social-name-hover"
-                      : "social-name"
-                  }`}
-                >
-                  LINKEDIN
-                </h3>
-                <h4
-                  onMouseEnter={() => this.hoverOn("linkedin")}
-                  onMouseLeave={() => this.hoverOff()}
-                  onClick={() =>
-                    window.open(
-                      "https://ca.linkedin.com/in/eugenecostov",
-                      "_blank"
-                    )
-                  }
-                >
-                  ca.linkedin.com/in/eugenecostov
-                </h4>
-              </div>
-              <div
-                className={`${
-                  hoveredElement === "github" ? "github-hover" : "github"
-                }`}
-              >
-                <h3
-                  className={`${
-                    hoveredElement === "github"
-                      ? "social-name-hover"
-                      : "social-name"
-                  }`}
-                >
-                  GITHUB
-                </h3>
-                <h4
-                  onMouseEnter={() => this.hoverOn("github")}
-                  onMouseLeave={() => this.hoverOff()}
-                  onClick={() =>
-                    window.open("https://github.com/EugeCos", "_blank")
-                  }
-                >
-                  github.com/EugeCos
-                </h4>
-              </div>
-            </div>
-
+          </div>
+          <div className="linkedin-github-wrapper">
             <div
               className={`${
-                hoveredElement === "resume" ? "resume-hover" : "resume"
+                hoveredElement === "linkedin" ? "linkedin-hover" : "linkedin"
               }`}
             >
-              <div>
-                <h3
-                  className={`${
-                    hoveredElement === "resume"
-                      ? "social-name-hover"
-                      : "social-name"
-                  }`}
-                >
-                  RESUME
-                </h3>
-                <h4
-                  onMouseEnter={() => this.hoverOn("resume")}
-                  onMouseLeave={() => this.hoverOff()}
-                  // onClick={() => window.open("#")}
-                >
-                  Download resume
-                </h4>
-              </div>
+              <h3
+                className={`${
+                  hoveredElement === "linkedin"
+                    ? "social-name-hover"
+                    : "social-name"
+                }`}
+              >
+                LINKEDIN
+              </h3>
+              <h4
+                onMouseEnter={() => this.hoverOn("linkedin")}
+                onMouseLeave={() => this.hoverOff()}
+                onClick={() =>
+                  window.open(
+                    "https://ca.linkedin.com/in/eugenecostov",
+                    "_blank"
+                  )
+                }
+              >
+                ca.linkedin.com/in/eugenecostov
+              </h4>
+            </div>
+            <div
+              className={`${
+                hoveredElement === "github" ? "github-hover" : "github"
+              }`}
+            >
+              <h3
+                className={`${
+                  hoveredElement === "github"
+                    ? "social-name-hover"
+                    : "social-name"
+                }`}
+              >
+                GITHUB
+              </h3>
+              <h4
+                onMouseEnter={() => this.hoverOn("github")}
+                onMouseLeave={() => this.hoverOff()}
+                onClick={() =>
+                  window.open("https://github.com/EugeCos", "_blank")
+                }
+              >
+                github.com/EugeCos
+              </h4>
+            </div>
+          </div>
+
+          <div
+            className={`${
+              hoveredElement === "resume" ? "resume-hover" : "resume"
+            }`}
+          >
+            <div>
+              <h3
+                className={`${
+                  hoveredElement === "resume"
+                    ? "social-name-hover"
+                    : "social-name"
+                }`}
+              >
+                RESUME
+              </h3>
+              <h4
+                onMouseEnter={() => this.hoverOn("resume")}
+                onMouseLeave={() => this.hoverOff()}
+                // onClick={() => window.open("#")}
+              >
+                Download resume
+              </h4>
             </div>
           </div>
         </div>

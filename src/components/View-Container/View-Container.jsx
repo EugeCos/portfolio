@@ -64,7 +64,8 @@ export default class ViewContainer extends Component {
   };
 
   render() {
-    const { projects, landedHomeFromAnotherPage, screenWidth } = this.state;
+    const { projects, landedHomeFromAnotherPage } = this.state;
+    const { screenWidth } = this.props;
     return (
       <div className="view-container-positioner">
         <div className="view-container-body">
@@ -76,6 +77,7 @@ export default class ViewContainer extends Component {
                   checkIfLandedFromAnotherPage={
                     this.checkIfLandedFromAnotherPage
                   }
+                  screenWidth={screenWidth}
                 />
               )}
             />
@@ -112,6 +114,7 @@ export default class ViewContainer extends Component {
                   checkIfLandedFromAnotherPage={
                     this.checkIfLandedFromAnotherPage
                   }
+                  screenWidth={screenWidth}
                 />
               )}
             />

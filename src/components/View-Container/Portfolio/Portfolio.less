@@ -8,6 +8,10 @@
   background: rgba(0, 0, 0, 0.2);
   padding-bottom: 40px;
   overflow-y: hidden;
+
+  @media screen and(max-width: 1368px) {
+    margin: 100px auto;
+  }
   @media screen and(max-width: 1024px) {
     margin: 80px auto 30px;
     width: 85%;
@@ -16,7 +20,7 @@
   @media screen and(max-width: 480px) {
     width: 90%;
     padding-bottom: 60%;
-    margin: 20px 0;
+    margin: 20px auto 0;
     padding: 45px 10px 0;
   }
 }
@@ -105,7 +109,7 @@
   letter-spacing: 2px;
   background: rgba(0, 0, 0, 0.8);
   transition: background 0.2s ease, top 0.5s ease;
-  @media screen and(max-width: 1369px) {
+  @media screen and(max-width: 1368px) {
     top: 60%;
   }
 

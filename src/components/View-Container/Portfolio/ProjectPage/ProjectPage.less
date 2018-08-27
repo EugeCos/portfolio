@@ -1,13 +1,21 @@
+@import "../../../../css/export.less";
+
 .selected-project-container {
   margin: 120px auto;
   padding-bottom: 30px;
-  width: 80%;
+  width: 85%;
   position: relative;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
   text-align: center;
-  h2 {
-    color: #eaeaea;
+
+  @media screen and(max-width: 1368px) {
+    margin: 100px auto;
+  }
+
+  @media screen and(max-width: 1024px) {
+    margin: 35px 0 0;
+    width: 100%;
   }
 }
 
@@ -15,23 +23,40 @@
   text-align: center;
   padding: 5px 0 21px;
   letter-spacing: 5px;
+  @media screen and(max-width: 1368px) {
+    padding: 5px 0 11px;
+  }
 
   h2 {
     margin: 30px 0 0;
-    color: #eaeaea;
+    color: @font-color-light;
     text-transform: uppercase;
+    @media screen and(max-width: 480px) {
+      font-size: 120%;
+    }
   }
 }
 
 .selected-project-content {
-  // border: 1px solid cyan;
   padding: 15px;
+  @media screen and(max-width: 480px) {
+    padding: 5px;
+  }
 }
 
 .desktop-content-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  @media screen and(max-width: 1368px) {
+    margin-bottom: 20px;
+  }
+  @media screen and(max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 }
 
 // -------------Desktop row--------------
@@ -39,6 +64,14 @@
   width: 35%;
   height: 200px;
   // border: 1px solid yellow;
+  @media screen and(max-width: 1368px) {
+    width: 30%;
+    height: 150px;
+  }
+  @media screen and(max-width: 480px) {
+    width: 80%;
+    height: 140px;
+  }
 
   .desktop-image {
     width: 100%;
@@ -47,6 +80,12 @@
     background-size: contain;
     background-repeat: no-repeat;
     // border: 1px solid red;
+    @media screen and(max-width: 1368px) {
+      margin-left: 20px;
+    }
+    @media screen and(max-width: 480px) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -54,9 +93,20 @@
   width: 65%;
   padding: 0 40px;
   line-height: 30px;
+  @media screen and(max-width: 480px) {
+    width: 90%;
+    padding: 0;
+  }
 
   h3 {
-    color: #eaeaea;
+    color: @font-color-light;
+    font-weight: 100;
+    @media screen and(max-width: 1368px) {
+      font-size: 105%;
+    }
+    @media screen and(max-width: 480px) {
+      font-size: 95%;
+    }
   }
 }
 // -------------------------------
@@ -67,20 +117,41 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  @media screen and(max-width: 1368px) {
+    margin-bottom: 10px;
+  }
+  @media screen and(max-width: 480px) {
+    flex-direction: column;
+  }
 }
+
 .mobile-text-wrapper {
   width: 35%;
-  color: #eaeaea;
-  // border: 1px solid blue;
+  color: @font-color-light;
+  // border: 1px solid greenyellow;
+  @media screen and(max-width: 1368px) {
+    width: 40%;
+  }
+  @media screen and(max-width: 480px) {
+    width: 100%;
+    margin-top: 30px;
+  }
 
   h3 {
-    color: #eaeaea;
+    color: @font-color-light;
+    font-weight: 100;
+    @media screen and(max-width: 1368px) {
+      font-size: 105%;
+    }
+    @media screen and(max-width: 480px) {
+      font-size: 95%;
+    }
   }
 
   .far {
     margin-right: 20px;
     font-size: 85%;
-    color: #ff7675;
+    color: @attention-color;
     text-shadow: 0 0 15px #fff;
   }
 
@@ -89,21 +160,35 @@
     align-items: center;
     margin-left: 30%;
     line-height: 30px;
+    @media screen and(max-width: 480px) {
+      margin-left: 15%;
+    }
   }
 }
 
 .mobile-image-wrapper {
   width: 65%;
   height: 250px;
-  // border: 1px solid yellow;
   display: flex;
+  @media screen and(max-width: 1368px) {
+    height: 140px;
+    width: 50%;
+  }
+  @media screen and(max-width: 480px) {
+    margin-top: 30px;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
 
   .mobile-image {
     width: 100%;
     height: auto;
     background-size: contain;
     background-repeat: no-repeat;
-    // border: 1px solid red;
+    @media screen and(max-width: 480px) {
+      height: 250px;
+    }
   }
 }
 // -------------------------------
@@ -112,31 +197,55 @@
 .buttons-container {
   display: flex;
   justify-content: space-between;
+  @media screen and(max-width: 480px) {
+    justify-content: center;
+    padding-top: 30px;
+    border-top: 1px solid rgb(92, 92, 92);
+    flex-direction: column;
+    align-items: center;
+  }
 
   .custom-btn {
     display: inline-block;
     border-radius: 2px;
     width: 130px;
-    margin: 0 30px;
-    padding: 10px 10px;
-    color: #eaeaea;
+    margin: 0 60px;
+    padding: 10px;
+    color: @font-color-light;
     font-size: 110%;
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.15s ease-in-out;
+    @media screen and(max-width: 1368px) {
+      width: 100px;
+      font-size: 90%;
+    }
+    @media screen and(max-width: 480px) {
+      margin: 0 0 20px;
+      width: 140px;
+      padding: 5px;
+    }
   }
 
   .btn-back {
     border: 1px solid #bdc3c7;
+    @media screen and(max-width: 480px) {
+      background: #bdc3c74f;
+      border: none;
+    }
     &:hover {
       background: #bdc3c74f;
     }
   }
 
   .btn-visit {
-    border: 1px solid #ff7675;
+    border: 1px solid @attention-color;
+    @media screen and(max-width: 480px) {
+      background: #d63031;
+      border: none;
+    }
     &:hover {
       background: #ffacac4f;
     }

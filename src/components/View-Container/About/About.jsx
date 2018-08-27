@@ -11,6 +11,8 @@ export default class About extends Component {
   }
 
   render() {
+    const { screenWidth } = this.props;
+    console.log(screenWidth);
     return (
       <ReactCSSTransitionGroup
         transitionAppear={true}
@@ -19,6 +21,15 @@ export default class About extends Component {
       >
         <div className="about-container">
           <div className="header-container">
+            {screenWidth < 1024 ? (
+              <img
+                src="/img/headshot.jpg"
+                alt="headshot"
+                className="profile-headshot"
+              />
+            ) : (
+              ""
+            )}
             <h2>HELLO THERE, I'M EUGENE</h2>
             <hr className="about-hr" />
           </div>
