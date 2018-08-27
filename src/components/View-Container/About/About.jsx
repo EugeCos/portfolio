@@ -12,12 +12,12 @@ export default class About extends Component {
 
   render() {
     const { screenWidth } = this.props;
-    console.log(screenWidth);
     return (
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
+        // transitionName={screenWidth > 1024 ? "fade-effect" : ""}
+        transitionName="fade-effect"
       >
         <div className="about-container">
           <div className="header-container">

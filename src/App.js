@@ -33,10 +33,10 @@ class App extends Component {
 
   componentWillMount() {
     this.getScreenWidth();
-    window.addEventListener("resize", this.getScreenWidth);
+    // window.addEventListener("resize", this.getScreenWidth);
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.getScreenWidth);
+    // window.removeEventListener("resize", this.getScreenWidth);
   }
 
   render() {

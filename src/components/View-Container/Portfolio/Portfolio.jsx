@@ -114,7 +114,8 @@ export default class Portfolio extends Component {
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
+        // transitionName={screenWidth > 1024 ? "fade-effect" : ""}
+        transitionName="fade-effect"
       >
         <div className="portfolio-container">
           <div className="portfolio-header">
