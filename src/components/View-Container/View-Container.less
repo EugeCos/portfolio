@@ -39,7 +39,7 @@
   height: 100vh;
   width: 100%;
   top: 0;
-  background-image: linear-gradient(@font-color-light, #305f85);
+  background-image: linear-gradient(@font-color-light, #114e80);
 }
 
 .dark-video-overlay {
@@ -52,6 +52,7 @@
   transition: background-color 0.3s ease;
   @media screen and(max-width: 1024px) {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -63,4 +64,16 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.3s ease;
+}
+
+.video-copyright {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  z-index: 5;
+  font-size: 125%;
+  span {
+    font-size: 115%;
+    cursor: pointer;
+  }
 }

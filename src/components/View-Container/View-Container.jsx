@@ -142,6 +142,23 @@ export default class ViewContainer extends Component {
             <div className="mobile-background" />
           )}
 
+          {screenWidth > 1024 ? (
+            <div className="video-copyright">
+              <h6>
+                video by{" "}
+                <span
+                  onClick={() =>
+                    window.open("http://www.christophpantel.com/", "_blank")
+                  }
+                >
+                  Christoph Pantel
+                </span>
+              </h6>
+            </div>
+          ) : (
+            ""
+          )}
+
           <div
             className={`${
               window.location.pathname !== "/"

@@ -14,6 +14,7 @@
   }
 
   @media screen and(max-width: 1024px) {
+    background: transparent;
     margin: 35px 0 0;
     width: 100%;
   }
@@ -63,14 +64,14 @@
 .desktop-image-wrapper {
   width: 35%;
   height: 200px;
-  // border: 1px solid yellow;
   @media screen and(max-width: 1368px) {
     width: 30%;
     height: 150px;
   }
   @media screen and(max-width: 480px) {
-    width: 80%;
+    width: 65%;
     height: 140px;
+    margin-bottom: 4px;
   }
 
   .desktop-image {
@@ -79,7 +80,6 @@
     margin-left: 40px;
     background-size: contain;
     background-repeat: no-repeat;
-    // border: 1px solid red;
     @media screen and(max-width: 1368px) {
       margin-left: 20px;
     }
@@ -113,7 +113,6 @@
 
 // ------------Mobile row---------------
 .mobile-content-wrapper {
-  // border: 1px solid red;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -128,7 +127,6 @@
 .mobile-text-wrapper {
   width: 35%;
   color: @font-color-light;
-  // border: 1px solid greenyellow;
   @media screen and(max-width: 1368px) {
     width: 40%;
   }
@@ -188,6 +186,7 @@
     background-repeat: no-repeat;
     @media screen and(max-width: 480px) {
       height: 250px;
+      margin-left: 40px;
     }
   }
 }

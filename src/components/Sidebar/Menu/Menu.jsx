@@ -42,6 +42,7 @@ export default class Menu extends Component {
   render() {
     const { menuItems, socialIcons } = this.state;
     const { toggleMenuIcon, closeMenu } = this.props;
+    const location = window.location.pathname;
 
     let menuItemsJSX = menuItems.map(item => {
       return (
@@ -49,8 +50,13 @@ export default class Menu extends Component {
           to={item.link}
           key={item.name}
           className={`menu-item ${item.name.replace(/\s/g, "").toLowerCase()} ${
-            window.location.pathname === item.link ? "selected" : ""
+            location === item.link ||
+            location === `${item.link}/fairmont` ||
+            location === `${item.link}/velvet`
+              ? "selected"
+              : ""
           }`}
+          style={location === "/" ? { color: "" } : { color: "initial" }}
           onClick={closeMenu}
         >
           {item.name}

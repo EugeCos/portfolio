@@ -40,8 +40,7 @@ export default class ProjectPage extends Component {
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        // transitionName={screenWidth > 1024 ? "fade-effect" : ""}
-        transitionName="fade-effect"
+        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
       >
         <div className="selected-project-container">
           <div className="selected-project-header">

@@ -43,8 +43,7 @@ export default class Contact extends Component {
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        // transitionName={screenWidth > 1024 ? "fade-effect" : ""}
-        transitionName="fade-effect"
+        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
       >
         <div className="contact-container">
           <div className="contact-header">
@@ -53,7 +52,7 @@ export default class Contact extends Component {
 
             <div className="name-email">
               <h3>Eugene Costov</h3>
-              <a class="mailto" href="mailto:contact@test.com">
+              <a class="mailto" href="mailto:eugene.costov@gmail.com">
                 eugene.costov@gmail.com
               </a>
             </div>

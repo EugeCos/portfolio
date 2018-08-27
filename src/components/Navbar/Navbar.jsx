@@ -4,7 +4,12 @@ import "./Navbar.less";
 
 const lightBG = {
   color: "#222f3e",
-  textShadow: "0 0 25px #222f3e"
+  textShadow: "0 0 35px #222f3e"
+};
+
+const lightBGSmallScreen = {
+  color: "#222f3e",
+  textShadow: "0 1px 10px #222f3e"
 };
 
 const darkBG = {
@@ -22,7 +27,9 @@ export default class Navbar extends Component {
             style={
               window.location.pathname !== "/" && screenWidth > 1024
                 ? darkBG
-                : lightBG
+                : screenWidth < 1024
+                  ? lightBGSmallScreen
+                  : lightBG
             }
           >
             Eugeville

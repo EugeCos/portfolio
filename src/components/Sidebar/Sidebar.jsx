@@ -9,7 +9,13 @@ export default class Sidebar extends Component {
   render() {
     const { toggleMenuIcon, toggleMenuIconFunction, closeMenu } = this.props;
     return (
-      <div className="sidebar-positioner">
+      <div
+        className={
+          window.location.pathname === "/"
+            ? "sidebar-positioner"
+            : "sidebar-positioner-grey"
+        }
+      >
         <div className="sidebar-container">
           <Bio />
           <hr className="hr-styled" />
