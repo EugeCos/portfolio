@@ -38,7 +38,7 @@ export default class Portfolio extends Component {
 
   render() {
     const { hoveredProject, hover } = this.state;
-    const { projects } = this.props;
+    const { projects, screenWidth } = this.props;
 
     let projectJSX = Object.keys(projects).map(key => {
       const currentProject = projects[key];
@@ -114,7 +114,7 @@ export default class Portfolio extends Component {
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        transitionName="fade-effect"
+        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
       >
         <div className="portfolio-container">
           <div className="portfolio-header">

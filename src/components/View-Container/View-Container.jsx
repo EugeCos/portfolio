@@ -104,6 +104,7 @@ export default class ViewContainer extends Component {
                   checkIfLandedFromAnotherPage={
                     this.checkIfLandedFromAnotherPage
                   }
+                  screenWidth={screenWidth}
                 />
               )}
             />
@@ -121,19 +122,26 @@ export default class ViewContainer extends Component {
             <Route
               path="/"
               component={() => (
-                <Home landedHomeFromAnotherPage={landedHomeFromAnotherPage} />
+                <Home
+                  landedHomeFromAnotherPage={landedHomeFromAnotherPage}
+                  screenWidth={screenWidth}
+                />
               )}
             />
           </Switch>
+          {screenWidth > 1024 ? (
+            <video
+              className="video"
+              src="/video/drop.mp4"
+              type="video/mp4"
+              loop
+              muted
+              autoPlay="autoplay"
+            />
+          ) : (
+            <div className="mobile-background" />
+          )}
 
-          <video
-            className="video"
-            src="/video/drop.mp4"
-            type="video/mp4"
-            loop
-            muted
-            autoPlay="autoplay"
-          />
           <div
             className={`${
               window.location.pathname !== "/"

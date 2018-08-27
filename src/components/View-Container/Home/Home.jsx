@@ -66,8 +66,8 @@ export default class Home extends Component {
   };
 
   componentWillMount() {
-    const { landedHomeFromAnotherPage } = this.props;
-    if (!landedHomeFromAnotherPage) {
+    const { landedHomeFromAnotherPage, screenWidth } = this.props;
+    if (!landedHomeFromAnotherPage && screenWidth > 1024) {
       setTimeout(
         () =>
           this.setState({ fading: false }, () =>

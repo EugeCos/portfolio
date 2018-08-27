@@ -37,12 +37,13 @@ export default class Contact extends Component {
 
   render() {
     const { hoveredElement } = this.state;
+    const { screenWidth } = this.props;
 
     return (
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={300}
-        transitionName="fade-effect"
+        transitionName={screenWidth > 1024 ? "fade-effect" : ""}
       >
         <div className="contact-container">
           <div className="contact-header">
