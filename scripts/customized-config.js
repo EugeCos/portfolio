@@ -29,11 +29,17 @@ function loadCustomizer(module) {
 switch (process.argv[2]) {
   // The "start" script is run during development mode
   case "start":
-    rewireModule("react-scripts/scripts/start.js", loadCustomizer("./config-overrides.dev"));
+    rewireModule(
+      "react-scripts/scripts/start.js",
+      loadCustomizer("./config-overrides.dev")
+    );
     break;
   // The "build" script is run to produce a production bundle
   case "build":
-    rewireModule("react-scripts/scripts/build.js", loadCustomizer("./config-overrides.prod"));
+    rewireModule(
+      "react-scripts/scripts/build.js",
+      loadCustomizer("./config-overrides.prod")
+    );
     break;
   // The "test" script runs all the tests with Jest
   case "test":
@@ -51,7 +57,9 @@ switch (process.argv[2]) {
     });
     break;
   default:
-    console.log('customized-config only supports "start", "build", and "test" options.');
+    console.log(
+      'customized-config only supports "start", "build", and "test" options.'
+    );
     process.exit(-1);
 }
 
