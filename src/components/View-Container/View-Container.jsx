@@ -9,7 +9,7 @@ import Portfolio from "./Portfolio/Portfolio";
 import ProjectPage from "./Portfolio/ProjectPage/ProjectPage";
 import Contact from "./Contact/Contact";
 
-export default class ViewContainer extends Component {
+class ViewContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -171,3 +171,5 @@ export default class ViewContainer extends Component {
     );
   }
 }
+
+export default ViewContainer;
