@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import "./Home.less";
 
 export default class Home extends Component {
@@ -88,6 +89,7 @@ export default class Home extends Component {
 
   render() {
     const { counter, fading } = this.state;
+    const { screenWidth } = this.props;
 
     let quoteJSX = (
       <div className={`home-container ${fading ? "faded" : ""}`}>
@@ -96,6 +98,19 @@ export default class Home extends Component {
       </div>
     );
 
-    return <Fragment>{quoteJSX}</Fragment>;
+    return (
+      <Fragment>
+        {quoteJSX}
+        {screenWidth < 480 ? (
+          <div className="button-positioner">
+            <Link to="/about" className="btn-orange">
+              ABOUT
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
+      </Fragment>
+    );
   }
 }

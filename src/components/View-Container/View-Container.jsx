@@ -139,7 +139,9 @@ class ViewContainer extends Component {
               autoPlay="autoplay"
             />
           ) : (
-            <div className="mobile-background" />
+            <div className="mobile-background">
+              <div className="content" />
+            </div>
           )}
 
           {screenWidth > 1024 ? (

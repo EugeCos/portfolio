@@ -1,3 +1,5 @@
+@import "../../../css/export.less";
+
 .home-container {
   margin: 250px auto;
   position: relative;
@@ -46,4 +48,24 @@
   opacity: 0;
   transform: translate(0, 50px);
   transform: scaleY(1.5);
+}
+
+.button-positioner {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+
+  .btn-orange {
+    cursor: pointer;
+    width: 140px;
+    padding: 2px 20px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    background: #d63031;
+    color: #fff;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./About.less";
 
 // ----------REACT-CSS-TRANSITION-GROUP-----------
@@ -74,6 +75,16 @@ export default class About extends Component {
             indie-music lover, as well as a long-term pizza enthusiast. I firmly
             believe the best days are the snowiest ones.
           </h3>
+
+          {screenWidth < 480 ? (
+            <div className="buttons-container">
+              <Link to="/projects" className="btn-orange">
+                visit portfolio
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </ReactCSSTransitionGroup>
     );
