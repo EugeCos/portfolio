@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.less";
+import "./App.css";
 import "./css/global.less";
 
 // ----------COMPONENTS----------
