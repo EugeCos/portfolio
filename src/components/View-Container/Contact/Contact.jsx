@@ -126,13 +126,14 @@ export default class Contact extends Component {
               >
                 RESUME
               </h3>
-              <h4
+              <a
                 onMouseEnter={() => this.hoverOn("resume")}
                 onMouseLeave={() => this.hoverOff()}
-                // onClick={() => window.open("#")}
+                href="/assets/Eugene_Costov_cv.pdf"
+                donwload=""
               >
                 Download resume
-              </h4>
+              </a>
             </div>
           </div>
         </div>
