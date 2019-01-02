@@ -36,24 +36,19 @@ export default class About extends Component {
 
           <h3>
             <span className="first-letter">I</span>
-            &nbsp;am happy to see you here,{" "}
-            {screenWidth > 1024 ? (
-              <span>
-                hope the splashing water doesn't distract you much from reading
-                my little story.
-              </span>
-            ) : (
-              <span>hope you're having a sunny day.</span>
-            )}
+            &nbsp;am happy to see you here, hope you're having a sunny day.
           </h3>
           <br />
           <h3>
-            <span className="first-letter">W</span>
-            hat have I been up to recently? Well, I am a full stack web
+            <span className="first-letter">I&nbsp;</span>am a full stack web
             developer with a range of successful web projects: websites, CMS
-            platforms and single page applications. I have a BA in Economics and
-            I have completed a full-time intensive web development program (with
-            emphasis on MERN stack).
+            platforms and single page applications. I mostly work with
+            front-end, with an emphasis on MERN stack. If you need a custom
+            modern-looking website for your restaurant, yoga studio, music band
+            or any other type of business, feel free to reach out. In general,
+            I'm open for new projects, as long as you promise it will be
+            interesting and engaging ;). If you wish to learn more, please feel
+            free to message me.
           </h3>
           <br />
           <h3>
