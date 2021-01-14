@@ -52,8 +52,8 @@ export default class Contact extends Component {
 
             <div className="name-email">
               <h3>Eugene Costov</h3>
-              <a class="mailto" href="mailto:eugene.costov@gmail.com">
-                eugene.costov@gmail.com
+              <a class="mailto" href="mailto:eugene@150ml.com">
+                eugene@150ml.com
               </a>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default class Contact extends Component {
             </div>
           </div>
 
-          <div
+          {/* <div
             className={`${
               hoveredElement === "resume" ? "resume-hover" : "resume"
             }`}
@@ -135,7 +135,7 @@ export default class Contact extends Component {
                 Download resume
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </ReactCSSTransitionGroup>
     );
