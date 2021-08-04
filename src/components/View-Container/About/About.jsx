@@ -65,7 +65,7 @@ export default class About extends Component {
             >
               Republic of Moldova
             </span>
-            , I currently reside in Toronto, Ontario. I would describe myself as
+            , I currently reside in Cambridge, Ontario. I would describe myself as
             a very 90's kind of person. Also, I am an avid indie-film and
             indie-music lover, as well as a long-term pizza enthusiast. I firmly
             believe the best days are the snowiest ones.
