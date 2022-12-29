@@ -12,7 +12,7 @@
     "react-dom": "^16.4.2",
     "react-https-redirect": "^1.0.10",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "node scripts/customized-config start",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "less": "^3.8.1",
-    "less-loader": "^4.1.0",
+    "less-loader": "^11.1.0",
     "less-plugin-autoprefix": "^2.0.0",
     "proxyquire": "^2.0.2",
     "rewire": "^4.0.1"
